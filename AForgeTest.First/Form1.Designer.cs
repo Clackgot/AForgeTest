@@ -37,13 +37,14 @@ namespace AForgeTest.First
             this.hScrollBar3 = new System.Windows.Forms.HScrollBar();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(289, 12);
+            this.button1.Location = new System.Drawing.Point(289, 52);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 29);
             this.button1.TabIndex = 0;
@@ -61,7 +62,7 @@ namespace AForgeTest.First
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(289, 47);
+            this.button2.Location = new System.Drawing.Point(289, 87);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 27);
             this.button2.TabIndex = 2;
@@ -71,7 +72,7 @@ namespace AForgeTest.First
             // 
             // hScrollBar1
             // 
-            this.hScrollBar1.Location = new System.Drawing.Point(408, 12);
+            this.hScrollBar1.Location = new System.Drawing.Point(408, 52);
             this.hScrollBar1.Name = "hScrollBar1";
             this.hScrollBar1.Size = new System.Drawing.Size(98, 21);
             this.hScrollBar1.TabIndex = 3;
@@ -80,7 +81,7 @@ namespace AForgeTest.First
             // 
             // hScrollBar2
             // 
-            this.hScrollBar2.Location = new System.Drawing.Point(526, 12);
+            this.hScrollBar2.Location = new System.Drawing.Point(526, 52);
             this.hScrollBar2.Name = "hScrollBar2";
             this.hScrollBar2.Size = new System.Drawing.Size(101, 21);
             this.hScrollBar2.TabIndex = 4;
@@ -89,7 +90,7 @@ namespace AForgeTest.First
             // 
             // hScrollBar3
             // 
-            this.hScrollBar3.Location = new System.Drawing.Point(646, 12);
+            this.hScrollBar3.Location = new System.Drawing.Point(646, 52);
             this.hScrollBar3.Name = "hScrollBar3";
             this.hScrollBar3.Size = new System.Drawing.Size(116, 21);
             this.hScrollBar3.TabIndex = 5;
@@ -128,11 +129,22 @@ namespace AForgeTest.First
             this.label1.TabIndex = 7;
             this.label1.Text = "Картиночка";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(289, 17);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(116, 29);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Original";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.hScrollBar3);
@@ -160,6 +172,7 @@ namespace AForgeTest.First
         private System.Windows.Forms.HScrollBar hScrollBar3;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button3;
     }
 }
 

@@ -123,5 +123,10 @@ namespace AForgeTest.First
                     break;
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = image.ToManagedImage();
+        }
     }
 }
