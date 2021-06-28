@@ -1,5 +1,7 @@
-﻿using AForge.Imaging;
+﻿using AForge;
+using AForge.Imaging;
 using AForge.Imaging.Filters;
+using AForge.Math.Geometry;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -133,22 +135,36 @@ namespace AForgeTest.First
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var img1 = AForge.Imaging.Image.FromFile(@"..\..\капчи\" + numericUpDown1.Value + ".png");//загружаем картинку из папки
-
-            AForge.Imaging.QuadrilateralFinder qf = new QuadrilateralFinder();
-            var corners = qf.ProcessImage(img1);
-            BitmapData data = img1.LockBits(
-                new Rectangle(0, 0, img1.Width, img1.Height), 
-                ImageLockMode.ReadWrite,
-                img1.PixelFormat);
-            Drawing.Polygon(data, corners, Color.Red);
-            for(int i = 0; i < corners.Count; i++)
+            SimpleShapeChecker shapeChecker = new SimpleShapeChecker();
+            var img = AForge.Imaging.Image.FromFile(@"..\..\капчи\" + numericUpDown1.Value + ".png");//загружаем картинку из папки
+                                                                                                     // locate objects using blob counter
+            BlobCounter blobCounter = new BlobCounter();
+            blobCounter.ProcessImage(img);
+            Blob[] blobs = blobCounter.GetObjectsInformation();
+            // create Graphics object to draw on the image and a pen
+            Graphics g = Graphics.FromImage(img);
+            Pen redPen = new Pen(Color.Red, 2);
+            // check each object and draw circle around objects, which
+            // are recognized as circles
+            for (int i = 0, n = blobs.Length; i < n; i++)
             {
-                Drawing.FillRectangle(data, new Rectangle(corners[i].X - 2, corners[i].Y - 2, 5, 5), Color.FromArgb(i*32+127+32,i*64,i*64));
-            }
-            img1.UnlockBits(data);
-            pictureBox1.Image = img1;
+                List<IntPoint> edgePoints = blobCounter.GetBlobsEdgePoints(blobs[i]);
 
+                AForge.Point center;
+                float radius;
+
+                if (shapeChecker.IsCircle(edgePoints, out center, out radius))
+                {
+                    g.DrawEllipse(redPen,
+                        (int)(center.X - radius),
+                        (int)(center.Y - radius),
+                        (int)(radius * 2),
+                        (int)(radius * 2));
+                }
+            }
+
+            redPen.Dispose();
+            g.Dispose();
         }
     }
 }
