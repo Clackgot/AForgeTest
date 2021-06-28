@@ -13,9 +13,15 @@ using System.Windows.Forms;
 
 namespace AForgeTest.First
 {
+    public enum Mode
+    {
+        Blur,
+        GrayScale
+    }
     public partial class Form1 : Form
     {
         UnmanagedImage image;//картиночка
+        private Mode CurrentMode;
         public Form1()
         {
             InitializeComponent();
@@ -50,6 +56,7 @@ namespace AForgeTest.First
         /// <param name="b">Синий</param>
         private void DoGrayScale(double r, double g, double b)
         {
+            CurrentMode = Mode.GrayScale;
             AForge.Imaging.Filters.Grayscale gs = new Grayscale(r, g, b);
             pictureBox1.Image = gs.Apply(image).ToManagedImage();
         }
@@ -68,6 +75,12 @@ namespace AForgeTest.First
         /// Blur
         /// </summary>
         private void button2_Click(object sender, EventArgs e)
+        {
+            CurrentMode = Mode.Blur;
+            DoBlur();
+        }
+
+        private void DoBlur()
         {
             AForge.Imaging.Filters.Blur blur = new Blur();
             pictureBox1.Image = blur.Apply(image).ToManagedImage();
@@ -98,7 +111,17 @@ namespace AForgeTest.First
             var img1 = AForge.Imaging.Image.FromFile(@"..\..\капчи\" + numericUpDown1.Value + ".png");//загружаем картинку из папки
 
             image = UnmanagedImage.FromManagedImage(img1);//Инициализируем
-            DoGrayScale();
+            switch (CurrentMode)
+            {
+                case Mode.Blur:
+                    DoBlur();
+                    break;
+                case Mode.GrayScale:
+                    DoGrayScale();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
