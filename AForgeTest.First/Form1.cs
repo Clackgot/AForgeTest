@@ -136,13 +136,14 @@ namespace AForgeTest.First
         private void button4_Click(object sender, EventArgs e)
         {
             SimpleShapeChecker shapeChecker = new SimpleShapeChecker();
-            var img = AForge.Imaging.Image.FromFile(@"..\..\капчи\" + numericUpDown1.Value + ".png");//загружаем картинку из папки
-                                                                                                     // locate objects using blob counter
+            var img1 = AForge.Imaging.Image.FromFile(@"..\..\капчи\" + numericUpDown1.Value + ".png");//загружаем картинку из папки
+
+            // locate objects using blob counter
             BlobCounter blobCounter = new BlobCounter();
-            blobCounter.ProcessImage(img);
+            blobCounter.ProcessImage(img1);
             Blob[] blobs = blobCounter.GetObjectsInformation();
             // create Graphics object to draw on the image and a pen
-            Graphics g = Graphics.FromImage(img);
+            Graphics g = Graphics.FromImage(img1);
             Pen redPen = new Pen(Color.Red, 2);
             // check each object and draw circle around objects, which
             // are recognized as circles
@@ -162,9 +163,10 @@ namespace AForgeTest.First
                         (int)(radius * 2));
                 }
             }
-
             redPen.Dispose();
             g.Dispose();
+
+            pictureBox1.Image = img1;
         }
     }
 }

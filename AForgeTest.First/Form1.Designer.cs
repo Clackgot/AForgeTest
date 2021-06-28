@@ -45,7 +45,7 @@ namespace AForgeTest.First
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(289, 52);
+            this.button1.Location = new System.Drawing.Point(368, 47);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 29);
             this.button1.TabIndex = 0;
@@ -56,14 +56,15 @@ namespace AForgeTest.First
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(240, 200);
+            this.pictureBox1.Size = new System.Drawing.Size(353, 240);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(289, 87);
+            this.button2.Location = new System.Drawing.Point(368, 82);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 27);
             this.button2.TabIndex = 2;
@@ -73,7 +74,7 @@ namespace AForgeTest.First
             // 
             // hScrollBar1
             // 
-            this.hScrollBar1.Location = new System.Drawing.Point(408, 52);
+            this.hScrollBar1.Location = new System.Drawing.Point(505, 12);
             this.hScrollBar1.Name = "hScrollBar1";
             this.hScrollBar1.Size = new System.Drawing.Size(98, 21);
             this.hScrollBar1.TabIndex = 3;
@@ -82,7 +83,7 @@ namespace AForgeTest.First
             // 
             // hScrollBar2
             // 
-            this.hScrollBar2.Location = new System.Drawing.Point(526, 52);
+            this.hScrollBar2.Location = new System.Drawing.Point(621, 12);
             this.hScrollBar2.Name = "hScrollBar2";
             this.hScrollBar2.Size = new System.Drawing.Size(101, 21);
             this.hScrollBar2.TabIndex = 4;
@@ -91,7 +92,7 @@ namespace AForgeTest.First
             // 
             // hScrollBar3
             // 
-            this.hScrollBar3.Location = new System.Drawing.Point(646, 52);
+            this.hScrollBar3.Location = new System.Drawing.Point(743, 12);
             this.hScrollBar3.Name = "hScrollBar3";
             this.hScrollBar3.Size = new System.Drawing.Size(116, 21);
             this.hScrollBar3.TabIndex = 5;
@@ -100,7 +101,7 @@ namespace AForgeTest.First
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(105, 218);
+            this.numericUpDown1.Location = new System.Drawing.Point(105, 255);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             10,
             0,
@@ -124,7 +125,7 @@ namespace AForgeTest.First
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 220);
+            this.label1.Location = new System.Drawing.Point(12, 257);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 17);
             this.label1.TabIndex = 7;
@@ -132,7 +133,7 @@ namespace AForgeTest.First
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(289, 17);
+            this.button3.Location = new System.Drawing.Point(368, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(116, 29);
             this.button3.TabIndex = 8;
@@ -142,7 +143,7 @@ namespace AForgeTest.First
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(289, 120);
+            this.button4.Location = new System.Drawing.Point(368, 115);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(116, 27);
             this.button4.TabIndex = 9;
@@ -154,7 +155,7 @@ namespace AForgeTest.First
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(948, 450);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
