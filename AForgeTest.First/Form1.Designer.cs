@@ -39,13 +39,14 @@ namespace AForgeTest.First
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(967, 12);
+            this.button1.Location = new System.Drawing.Point(982, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 29);
             this.button1.TabIndex = 0;
@@ -74,25 +75,25 @@ namespace AForgeTest.First
             // 
             // hScrollBar1
             // 
-            this.hScrollBar1.Location = new System.Drawing.Point(826, 121);
+            this.hScrollBar1.Location = new System.Drawing.Point(982, 53);
             this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(98, 21);
+            this.hScrollBar1.Size = new System.Drawing.Size(116, 21);
             this.hScrollBar1.TabIndex = 3;
             this.hScrollBar1.Value = 35;
             this.hScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar1_Scroll);
             // 
             // hScrollBar2
             // 
-            this.hScrollBar2.Location = new System.Drawing.Point(826, 155);
+            this.hScrollBar2.Location = new System.Drawing.Point(982, 86);
             this.hScrollBar2.Name = "hScrollBar2";
-            this.hScrollBar2.Size = new System.Drawing.Size(101, 21);
+            this.hScrollBar2.Size = new System.Drawing.Size(116, 21);
             this.hScrollBar2.TabIndex = 4;
             this.hScrollBar2.Value = 25;
             this.hScrollBar2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar2_Scroll);
             // 
             // hScrollBar3
             // 
-            this.hScrollBar3.Location = new System.Drawing.Point(826, 191);
+            this.hScrollBar3.Location = new System.Drawing.Point(982, 117);
             this.hScrollBar3.Name = "hScrollBar3";
             this.hScrollBar3.Size = new System.Drawing.Size(116, 21);
             this.hScrollBar3.TabIndex = 5;
@@ -143,19 +144,30 @@ namespace AForgeTest.First
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(845, 80);
+            this.button4.Location = new System.Drawing.Point(826, 80);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(116, 27);
             this.button4.TabIndex = 9;
-            this.button4.Text = "New";
+            this.button4.Text = "FindCircle";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(826, 113);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(116, 27);
+            this.button5.TabIndex = 10;
+            this.button5.Text = "FindCircleNew";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1129, 663);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
@@ -187,6 +199,7 @@ namespace AForgeTest.First
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 
