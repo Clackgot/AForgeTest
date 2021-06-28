@@ -123,10 +123,32 @@ namespace AForgeTest.First
                     break;
             }
         }
-
+        /// <summary>
+        /// Original
+        /// </summary>
         private void button3_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = image.ToManagedImage();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var img1 = AForge.Imaging.Image.FromFile(@"..\..\капчи\" + numericUpDown1.Value + ".png");//загружаем картинку из папки
+
+            AForge.Imaging.QuadrilateralFinder qf = new QuadrilateralFinder();
+            var corners = qf.ProcessImage(img1);
+            BitmapData data = img1.LockBits(
+                new Rectangle(0, 0, img1.Width, img1.Height), 
+                ImageLockMode.ReadWrite,
+                img1.PixelFormat);
+            Drawing.Polygon(data, corners, Color.Red);
+            for(int i = 0; i < corners.Count; i++)
+            {
+                Drawing.FillRectangle(data, new Rectangle(corners[i].X - 2, corners[i].Y - 2, 5, 5), Color.FromArgb(i*32+127+32,i*64,i*64));
+            }
+            img1.UnlockBits(data);
+            pictureBox1.Image = img1;
+
         }
     }
 }
